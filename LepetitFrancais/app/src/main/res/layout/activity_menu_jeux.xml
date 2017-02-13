@@ -74,6 +74,13 @@
                     android:id="@+id/textView4"
                     android:padding="10dp"
                     android:textSize="15sp" />
+
+                <Button
+                    android:text="Play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button"
+                    android:layout_marginLeft="50dp" />
             </TableRow>
 
             <View
