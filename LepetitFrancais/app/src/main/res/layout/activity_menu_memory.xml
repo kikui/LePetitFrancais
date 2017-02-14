@@ -36,7 +36,7 @@
                 android:text="Animaux"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView11"
+                android:id="@+id/theme_memory_animaux"
                 android:layout_weight="1"
                 android:layout_gravity="left"
                 android:gravity="center" />
@@ -54,7 +54,7 @@
                 android:text="Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/button2"
+                android:id="@+id/button_memory_animaux"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center" />
@@ -69,7 +69,7 @@
                 android:text="Chiffres"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView6"
+                android:id="@+id/theme_memory_chiffres"
                 android:layout_weight="1"
                 android:layout_gravity="left"
                 android:gravity="center" />
@@ -87,7 +87,7 @@
                 android:text="Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/button3"
+                android:id="@+id/button_memory_chiffres"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center" />
@@ -101,7 +101,7 @@
                 android:text="Maison"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView13"
+                android:id="@+id/theme_memory_maison"
                 android:layout_weight="1"
                 android:layout_gravity="left"
                 android:gravity="center" />
@@ -119,7 +119,7 @@
                 android:text="Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/button4"
+                android:id="@+id/button_memory_maison"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center" />
@@ -133,7 +133,7 @@
                 android:text="Forêt"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView15"
+                android:id="@+id/theme_memory_foret"
                 android:layout_weight="1"
                 android:layout_gravity="left"
                 android:gravity="center" />
@@ -151,7 +151,7 @@
                 android:text="Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/button5"
+                android:id="@+id/button_memory_foret"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center" />
@@ -165,7 +165,7 @@
                 android:text="Ville"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView15"
+                android:id="@+id/theme_memory_ville"
                 android:layout_weight="1"
                 android:layout_gravity="left"
                 android:gravity="center" />
@@ -183,7 +183,7 @@
                 android:text="Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/button5"
+                android:id="@+id/button_memory_ville"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center" />
