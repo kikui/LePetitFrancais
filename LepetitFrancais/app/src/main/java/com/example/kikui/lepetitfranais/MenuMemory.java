@@ -15,13 +15,13 @@ public class MenuMemory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_memory);
 
-        buttonMemory = findViewById(R.id.button_memory_animaux);
+        buttonMemory = (Button) findViewById(R.id.button_memory_animaux);
 
         buttonMemory.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(buttonMemory.this, Memory.class)
+                Intent intent = new Intent(MenuMemory.this, Memory.class);
                 startActivity(intent);
             }
         });
