@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Memory" />
-        <activity android:name=".MenuMemory"></activity>
+        <activity android:name=".MenuMemory" />
+        <activity android:name=".MenuGame" />
+        <activity android:name=".MenuSkils" />
+        <activity android:name=".MenuSuccess"></activity>
     </application>
 
 </manifest>
