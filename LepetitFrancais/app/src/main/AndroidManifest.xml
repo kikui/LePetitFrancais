@@ -8,18 +8,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenu">
+        <activity android:name=".MainMenu"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Memory" />
-        <activity android:name=".MenuMemory" />
-        <activity android:name=".MenuGame" />
-        <activity android:name=".MenuSkils" />
-        <activity android:name=".MenuSuccess"></activity>
+        <activity android:name=".Memory"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuMemory"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuGame"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuSkils"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuSuccess"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MenuSettings"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

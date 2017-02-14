@@ -8,7 +8,7 @@ android:layout_height="match_parent"
 tools:context="com.example.kikui.lepetitfranais.MenuSuccess">
 
 <TextView
-    android:text="SUCCES"
+    android:text="Success"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/textView"

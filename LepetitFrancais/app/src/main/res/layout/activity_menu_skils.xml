@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 tools:context="com.example.kikui.lepetitfranais.MenuSkils">
 
 <TextView
-    android:text="COMPETANCE"
+    android:text="Skils"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/textView"
@@ -39,7 +39,7 @@ tools:context="com.example.kikui.lepetitfranais.MenuSkils">
             android:contextClickable="false">
 
             <TextView
-                android:text="Mémorie"
+                android:text="Mémory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"

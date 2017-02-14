@@ -18,10 +18,10 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="Jeux"
+            android:text="Games"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_jeux"
+            android:id="@+id/button_game"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
             android:paddingLeft="70dp"
@@ -30,10 +30,10 @@
             android:paddingBottom="30dp" />
 
         <Button
-            android:text="Succès"
+            android:text="Success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_succes"
+            android:id="@+id/button_success"
             android:layout_marginTop="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="25dp"
@@ -41,23 +41,23 @@
             android:paddingLeft="50dp" />
 
         <Button
-            android:text="Compétences"
+            android:text="Skils"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_competence"
+            android:id="@+id/button_skils"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="25dp"
-            android:paddingLeft="27dp"
-            android:paddingRight="27dp" />
+            android:paddingLeft="62dp"
+            android:paddingRight="62dp" />
 
         <Button
-            android:text="Paramètre"
+            android:text="Settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_parametre"
+            android:id="@+id/button_settings"
             android:layout_gravity="center_horizontal"
-            android:paddingLeft="35dp"
-            android:paddingRight="35dp" />
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp" />
 
     </LinearLayout>
 </RelativeLayout>
