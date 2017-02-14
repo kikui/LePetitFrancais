@@ -18,14 +18,6 @@ tools:context="com.example.kikui.lepetitfranais.MenuGame">
     android:layout_marginTop="20dp"
     android:textAppearance="@style/TextAppearance.AppCompat" />
 
-<TextView
-    android:text="Niveau : 'affichage du niveau selectioné'"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/textView2"
-    android:layout_marginLeft="20dp"
-    android:layout_marginBottom="5dp" />
-
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -44,46 +36,31 @@ tools:context="com.example.kikui.lepetitfranais.MenuGame">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contextClickable="false">
+            android:contextClickable="true"
+            android:id="@+id/playMenuMemory"
+            android:clickable="true">
 
             <TextView
                 android:text="Memorie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
-                android:padding="20dp"
-                android:textSize="20sp" />
+                android:textSize="30sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="50dp"
+                android:paddingTop="50dp" />
 
             <TextView
                 android:text="'10%'Terminé"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView5"
-                android:textSize="20sp"
-                android:paddingBottom="20dp"
-                android:paddingTop="20dp"
-                android:paddingLeft="100dp" />
+                android:textSize="30sp"
+                android:paddingBottom="50dp"
+                android:paddingTop="50dp"
+                android:paddingLeft="20dp" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:text="Description du jeu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView4"
-                android:padding="10dp"
-                android:textSize="15sp" />
-
-            <Button
-                android:text="Play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button"
-                android:layout_marginLeft="50dp" />
         </TableRow>
 
         <View
