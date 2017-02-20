@@ -35,7 +35,7 @@ public class MemoryButton extends Button
         frontDrawableId = frontImageDrawableId;
 
         front = AppCompatDrawableManager.get().getDrawable(context, frontImageDrawableId);
-        back = AppCompatDrawableManager.get().getDrawable(context, R.drawable.0);
+        back = AppCompatDrawableManager.get().getDrawable(context, R.drawable.Memory_0);
 
         setBackground(back);
 
