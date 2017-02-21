@@ -18,64 +18,79 @@ tools:context="com.example.kikui.lepetitfranais.MenuGame">
     android:layout_marginTop="20dp"
     android:textAppearance="@style/TextAppearance.AppCompat" />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1px"
-            android:background="#FF909090"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
 
-        <TableRow
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contextClickable="true"
-            android:id="@+id/playMenuMemory"
-            android:clickable="true">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:text="Memorie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView3"
-                android:textSize="30sp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="50dp"
-                android:paddingTop="50dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#FF909090"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
 
-            <TextView
-                android:text="'10%'Terminé"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView5"
-                android:textSize="30sp"
-                android:paddingBottom="50dp"
-                android:paddingTop="50dp"
-                android:paddingLeft="20dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:id="@+id/playMenuMemory"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
 
-        </TableRow>
+                <TextView
+                    android:text="Memory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView17"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:textSize="30sp" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1px"
-            android:background="#FF909090"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="177dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.31">
 
+                    <ProgressBar
+                        style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:secondaryProgress="0"
+                        android:elevation="1dp" />
 
+                    <TextView
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/memoryPCT"
+                        android:layout_weight="1"
+                        android:layout_gravity="center" />
+                </LinearLayout>
 
-    </TableLayout>
+            </LinearLayout>
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#FF909090"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
 
-
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

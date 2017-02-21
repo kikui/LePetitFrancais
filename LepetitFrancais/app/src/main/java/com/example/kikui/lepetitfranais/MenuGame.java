@@ -4,20 +4,30 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TableRow;
+import android.widget.ProgressBar;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MenuGame extends AppCompatActivity {
 
-    private TableRow RowPlayMemory;
+    private LinearLayout layoutPlayMemory;
+    private ProgressBar bar;
+    private int animauxPCT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_game);
 
-        RowPlayMemory = (TableRow) findViewById(R.id.playMenuMemory);
-        RowPlayMemory.setOnClickListener(new View.OnClickListener() {
+        bar = (ProgressBar) findViewById(R.id.progressBar);
+        TextView memoryPCT = (TextView)findViewById(R.id.memoryPCT);
+        int valueAnimaux = ((MenuMemory)getParent()).getValue(animauxPCT);
+
+        bar.incrementProgressBy(valueAnimaux);
+        memoryPCT.setText(String.valueOf(bar.getProgress()+"%"));
+
+        layoutPlayMemory = (LinearLayout) findViewById(R.id.playMenuMemory);
+        layoutPlayMemory.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
