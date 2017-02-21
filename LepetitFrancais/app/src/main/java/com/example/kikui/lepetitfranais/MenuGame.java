@@ -1,6 +1,7 @@
 package com.example.kikui.lepetitfranais;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,10 @@ public class MenuGame extends AppCompatActivity {
 
     private LinearLayout layoutPlayMemory;
     private ProgressBar bar;
-    private int animauxPCT;
+    private int valueAnimaux;
+    SharedPreferences sharedValuePCT;
+    private String prefAnimauxPCT;
+    private String prefPCT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +25,12 @@ public class MenuGame extends AppCompatActivity {
 
         bar = (ProgressBar) findViewById(R.id.progressBar);
         TextView memoryPCT = (TextView)findViewById(R.id.memoryPCT);
-        int valueAnimaux = ((MenuMemory)getParent()).getValue(animauxPCT);
+
+        sharedValuePCT = getBaseContext().getSharedPreferences(prefPCT, MODE_PRIVATE);
+        int valueAnimaux = sharedValuePCT.getInt(prefAnimauxPCT, 0);
 
         bar.incrementProgressBy(valueAnimaux);
-        memoryPCT.setText(String.valueOf(bar.getProgress()+"%"));
+        memoryPCT.setText(String.valueOf(bar.getProgress()+"% "));
 
         layoutPlayMemory = (LinearLayout) findViewById(R.id.playMenuMemory);
         layoutPlayMemory.setOnClickListener(new View.OnClickListener() {
