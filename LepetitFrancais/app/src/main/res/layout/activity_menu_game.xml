@@ -4,7 +4,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/activity_menu_game"
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.example.kikui.lepetitfranais.MenuGame">
+tools:context="com.example.kikui.lepetitfranais.menu.MenuGame">
 
 <TextView
     android:text="Game"

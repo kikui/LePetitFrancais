@@ -1,7 +1,6 @@
-package com.example.kikui.lepetitfranais;
+package com.example.kikui.lepetitfranais.menu;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +8,12 @@ import android.widget.ProgressBar;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.kikui.lepetitfranais.R;
+
 public class MenuGame extends AppCompatActivity {
 
     private LinearLayout layoutPlayMemory;
     private ProgressBar bar;
-    private int valueAnimaux;
-    SharedPreferences sharedValuePCT;
-    private String prefAnimauxPCT;
-    private String prefPCT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +23,7 @@ public class MenuGame extends AppCompatActivity {
         bar = (ProgressBar) findViewById(R.id.progressBar);
         TextView memoryPCT = (TextView)findViewById(R.id.memoryPCT);
 
-        sharedValuePCT = getBaseContext().getSharedPreferences(prefPCT, MODE_PRIVATE);
-        int valueAnimaux = sharedValuePCT.getInt(prefAnimauxPCT, 0);
-
-        bar.incrementProgressBy(valueAnimaux);
+        bar.incrementProgressBy(5);
         memoryPCT.setText(String.valueOf(bar.getProgress()+"% "));
 
         layoutPlayMemory = (LinearLayout) findViewById(R.id.playMenuMemory);
