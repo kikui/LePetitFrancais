@@ -60,7 +60,7 @@ public class MemoryButton extends Button
         return frontDrawableId;
     }
 
-    private void flip()
+    public void flip()
     {
         if(isMatched)
             return;
