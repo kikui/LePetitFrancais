@@ -85,9 +85,9 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view)
     {
-        if (isBusy)
+        /*if (isBusy)
             return;
-        MemoryButton button (MemoryButton) view;
+        //MemoryButton button (MemoryButton) view;
         if (button.isMatched)
             return;
         if (selectedButton1 == null)
@@ -117,6 +117,6 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
             final Handler handler = new Handler();
             handler.postDelayed()
 
-        }
+        }*/
     }
 }
