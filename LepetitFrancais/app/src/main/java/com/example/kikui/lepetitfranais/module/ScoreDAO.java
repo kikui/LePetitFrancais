@@ -12,11 +12,11 @@ public class ScoreDAO extends DAOBase {
 
     public static final String TABLE_NAME = "Score_par_jeu";
     public static final String KEY = "id";
-    public static final String JEU = "jeu";
-    public static final String SCORE = "score";
+    public static final String JEUX = "jeux";
+    public static final String SCORES = "scores";
 
     public static final String TABLE_CREATE = "CREATE TABLE " + TABLE_NAME + " (" + KEY +
-            " INTEGER PRIMARY KEY AUTOINCREMENT, " + JEU + " TEXT, " + SCORE + " REAL);";
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " + JEUX + " TEXT, " + SCORES + " INTEGER DEFAULT 0);";
 
     public static final String TABLE_DROP =  "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
 
@@ -29,8 +29,8 @@ public class ScoreDAO extends DAOBase {
      */
     public void ajouter(Score m) {
         ContentValues value = new ContentValues();
-        value.put(ScoreDAO.JEU, m.getJeu());
-        value.put(ScoreDAO.SCORE, m.getScore());
+        value.put(ScoreDAO.JEUX, m.getJeu());
+        value.put(ScoreDAO.SCORES, m.getScore());
         SQLDb.insert(ScoreDAO.TABLE_NAME, null, value);
     }
 
@@ -46,7 +46,7 @@ public class ScoreDAO extends DAOBase {
      */
     public void modifier(Score m) {
         ContentValues value = new ContentValues();
-        value.put(SCORE, m.getScore());
+        value.put(SCORES, m.getScore());
         SQLDb.update(TABLE_NAME, value, KEY  + " = ?", new String[] {String.valueOf(m.getId())});
 
     }
@@ -55,7 +55,7 @@ public class ScoreDAO extends DAOBase {
      * @param id l'identifiant d'un jeu pour récupérer le score
      */
     public Cursor selectionner(int id) {
-        Cursor c = SQLDb.rawQuery("select " + SCORE + " from " + TABLE_NAME + " where jeu = ?", new String[]{String.valueOf(id)});
+        Cursor c = SQLDb.rawQuery("select " + SCORES + " from " + TABLE_NAME + " where jeu = ?", new String[]{String.valueOf(id)});
         return c;
     }
 }
