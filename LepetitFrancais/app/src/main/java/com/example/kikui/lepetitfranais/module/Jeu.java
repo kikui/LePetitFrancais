@@ -4,14 +4,15 @@ package com.example.kikui.lepetitfranais.module;
  * Created by kikui on 23/02/2017.
  */
 
-public class Score {
+public class Jeu {
 
     private int id;
     private String jeu;
     private int score;
 
-    public Score(int id, String jeu, int score) {
-        this.id = id;
+    public Jeu(){}
+
+    public Jeu(String jeu, int score) {
         this.jeu = jeu;
         this.score = score;
     }
@@ -40,4 +41,7 @@ public class Score {
         this.score = score;
     }
 
+    public String toString(){
+        return "ID : "+id+"\njeu : "+jeu+"\nscore : "+score;
+    }
 }

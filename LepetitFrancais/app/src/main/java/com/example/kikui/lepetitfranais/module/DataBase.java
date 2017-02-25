@@ -3,6 +3,7 @@ package com.example.kikui.lepetitfranais.module;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by kikui on 23/02/2017.
@@ -10,18 +11,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBase extends SQLiteOpenHelper {
 
-    public static final String SCORE_KEY = "id";
-    public static final String SCORE_JEUX = "jeux";
-    public static final String SCORE_SCORES = "scores";
-    public static final String SCORE_TABLE_NAME = "Score_par_jeu";
+    private static final String TABLE_JEUX = "table_jeux";
+    private static final String COL_ID = "ID";
+    private static final String COL_JEUX = "Jeux";
+    private static final String COL_SCORES = "Scores";
 
-    public static final String SCORE_TABLE_CREATE = "create table " +
-                    SCORE_TABLE_NAME + " (" +
-                    SCORE_KEY + " integer primary key autoincrement, " +
-                    SCORE_JEUX + " text, " +
-                    SCORE_SCORES + " integer default 0);";
-
-    public static final String SCORE_TABLE_DROP = "DROP TABLE IF EXISTS " + SCORE_TABLE_NAME + ";";
+    private static final String CREATE_BDD = "CREATE TABLE " + TABLE_JEUX + " ("
+            + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_JEUX + " TEXT NOT NULL, "
+            + COL_SCORES + " INTEGER DEFAULT 0);";
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -29,14 +26,16 @@ public class DataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SCORE_TABLE_CREATE);
+        //on créé la table à partir de la requête écrite dans la variable CREATE_BDD
+        db.execSQL(CREATE_BDD);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(SCORE_TABLE_DROP);
+        //On peut fait ce qu'on veut ici moi j'ai décidé de supprimer la table et de la recréer
+        //comme ça lorsque je change la version les id repartent de 0
+        db.execSQL("DROP TABLE " + TABLE_JEUX + ";");
         onCreate(db);
     }
-
 
 }
