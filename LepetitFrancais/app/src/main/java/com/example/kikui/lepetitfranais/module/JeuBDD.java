@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by kikui on 25/02/2017.
  */
 
-public class ScoreBDD {
+public class JeuBDD {
 
     private static final int VERSION_BDD = 1;
     private static final String NOM_BDD = "maBDD.db";
@@ -26,7 +26,7 @@ public class ScoreBDD {
 
     private DataBase maBaseSQLite;
 
-    public ScoreBDD(Context context){
+    public JeuBDD(Context context){
         //On créer la BDD et sa table
         maBaseSQLite = new DataBase(context, NOM_BDD, null, VERSION_BDD);
     }
@@ -80,4 +80,32 @@ public class ScoreBDD {
         c.close();
         return score;
     }
+
+    public Jeu getJeuWithNameJeu(String jeu){
+        //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
+        Cursor c = bdd.query(TABLE_JEUX, new String[] {COL_ID, COL_JEUX, COL_SCORES}, COL_JEUX + " LIKE \"" + jeu +"\"", null, null, null, null);
+        return cursorToJeu(c);
+    }
+
+    //Cette méthode permet de convertir un cursor en un Jeu
+    private Jeu cursorToJeu(Cursor c){
+        //si aucun élément n'a été retourné dans la requête, on renvoie null
+        if (c.getCount() == 0)
+            return null;
+
+        //Sinon on se place sur le premier élément
+        c.moveToFirst();
+        //On créé un jeu
+        Jeu jeu = new Jeu();
+        //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
+        jeu.setId(c.getInt(NUM_COL_ID));
+        jeu.setJeu(c.getString(NUM_COL_JEUX));
+        jeu.setScore(c.getInt(NUM_COL_SCORES));
+        //On ferme le cursor
+        c.close();
+
+        //On retourne le jeu
+        return jeu;
+    }
+
 }
