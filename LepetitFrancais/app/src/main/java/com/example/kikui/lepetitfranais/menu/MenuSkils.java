@@ -25,12 +25,12 @@ public class MenuSkils extends AppCompatActivity {
         progressBarMemoryPCT.incrementProgressBy(PCTGlobalmemory());
         textMemoryPCT.setText(String.valueOf(progressBarMemoryPCT.getProgress()+"% "));
 
-        checked("memoryAnimaux");
+        checked("memoryAnimaux",checkBoxAnimaux);
+        checked("memoryChiffres",checkBoxChiffres);
 
     }
 
     public int PCTGlobalmemory(){
-        //---------------------------BDD---------------------------
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
         Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
@@ -46,17 +46,17 @@ public class MenuSkils extends AppCompatActivity {
             memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
         }
         int result = memoryAnimauxFromBdd.getScore()+memoryChiffresFromBdd.getScore();
+        result = (result*100)/4000;
         jeuBdd.close();
-        //---------------------------BDD---------------------------
         return result;
     }
 
-    public void checked(String nomJeu){
+    public void checked(String nomJeu, CheckBox nomCheckBox){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
         Jeu jeuFromBdd = jeuBdd.getJeuWithNameJeu(nomJeu);
         if(jeuFromBdd.getScore()==2000){
-            checkBoxAnimaux.setChecked(true);
+            nomCheckBox.setChecked(true);
         }
         jeuBdd.close();
     }

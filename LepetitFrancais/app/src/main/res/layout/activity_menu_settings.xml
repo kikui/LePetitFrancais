@@ -23,31 +23,4 @@
         android:layout_marginTop="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <Button
-        android:text="Créer la base de donnée"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar3"
-        android:max="100" />
-
-    <TextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:gravity="center" />
-
-    <TextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:gravity="center" />
-
 </LinearLayout>

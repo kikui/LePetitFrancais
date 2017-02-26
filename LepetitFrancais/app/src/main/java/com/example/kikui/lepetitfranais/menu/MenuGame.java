@@ -57,6 +57,7 @@ public class MenuGame extends AppCompatActivity {
             memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
         }
         int result = memoryAnimauxFromBdd.getScore()+memoryChiffresFromBdd.getScore();
+        result = (result*100)/4000;
         jeuBdd.close();
         //---------------------------BDD---------------------------
         return result;
