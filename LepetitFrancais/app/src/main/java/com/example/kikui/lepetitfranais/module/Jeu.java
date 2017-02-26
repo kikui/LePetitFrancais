@@ -41,6 +41,12 @@ public class Jeu {
         this.score = score;
     }
 
+    public int getScorePCT(){
+        int result=getScore();
+        result = (result*100)/2000;
+        return result;
+    }
+
     public String toString(){
         return "ID : "+id+"\njeu : "+jeu+"\nscore : "+score;
     }

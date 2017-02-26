@@ -49,6 +49,8 @@ public class MenuSettings extends AppCompatActivity {
 
         if(jeuFromBdd != null){
             Toast.makeText(this, jeuFromBdd.toString(), Toast.LENGTH_LONG).show();
+            String affiche = "score de J'ai modifié le nom du jeu :";
+            Toast.makeText(this, affiche.toString()+jeuFromBdd.getScore() , Toast.LENGTH_LONG).show();
             jeuBdd.removeJeuWithID(jeuFromBdd.getId());
         }
 
@@ -74,8 +76,8 @@ public class MenuSettings extends AppCompatActivity {
         });
 
 
-        progressBar3.setProgress(nb);
-        //textview2.setText(String.valueOf(progressBar3.getProgress()+"% "));
+        progressBar3.setProgress(jeuFromBdd.getScorePCT());
+        textview2.setText(String.valueOf(progressBar3.getProgress()+"% "));
 
     }
 

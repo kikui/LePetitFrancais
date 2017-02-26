@@ -69,18 +69,6 @@ public class JeuBDD {
         return bdd.delete(TABLE_JEUX, COL_ID + " = " +id, null);
     }
 
-    public int getScoreWithJeu(String jeu){
-        //Récupère dans un Cursor la valeur correspondant au score d'un jeu contenu dans la BDD (ici on sélectionne le score grâce à son jeu)
-        Cursor c = bdd.query(TABLE_JEUX, new String[] {COL_SCORES}, COL_JEUX + " LIKE \"" + jeu +"\"", null, null, null, null);
-        if (c.getCount() == 0)
-            return 0;
-        c.moveToFirst();
-        int score;
-        score = c.getInt(NUM_COL_SCORES);
-        c.close();
-        return score;
-    }
-
     public Jeu getJeuWithNameJeu(String jeu){
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
         Cursor c = bdd.query(TABLE_JEUX, new String[] {COL_ID, COL_JEUX, COL_SCORES}, COL_JEUX + " LIKE \"" + jeu +"\"", null, null, null, null);
