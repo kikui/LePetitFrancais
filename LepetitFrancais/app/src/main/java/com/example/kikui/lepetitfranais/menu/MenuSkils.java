@@ -17,8 +17,6 @@ public class MenuSkils extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_skils);
 
-        verify();
-
         ProgressBar progressBarAnimauxPCT = (ProgressBar) findViewById(R.id.progressBarAnimauxPCT);
         TextView textAnimauxPCT = (TextView)findViewById(R.id.textAnimauxPCT);
         CheckBox checkBoxAnimauxMemory = (CheckBox)findViewById(R.id.checkBoxAnimauxMemory);
@@ -60,34 +58,4 @@ public class MenuSkils extends AppCompatActivity {
         jeuBdd.close();
     }
 
-    public void verify(){
-        JeuBDD jeuBdd = new JeuBDD(this);
-        jeuBdd.open();
-        Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
-        Jeu gameDeuxAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxAnimaux");
-        Jeu memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
-        Jeu gameDeuxChiffresFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxChiffres");
-        Jeu animaux = new Jeu("Animaux",0);
-        Jeu chiffres = new Jeu("Chiffres",0);
-        jeuBdd.insertJeu(animaux);
-        jeuBdd.insertJeu(chiffres);
-
-        if(memoryAnimauxFromBdd==null){
-            Jeu jeu = new Jeu("memoryAnimaux",0);
-            jeuBdd.insertJeu(jeu);
-        }
-        if(memoryChiffresFromBdd==null){
-            Jeu jeu = new Jeu("memoryChiffres",0);
-            jeuBdd.insertJeu(jeu);
-        }
-        if(gameDeuxAnimauxFromBdd==null){
-            Jeu jeu = new Jeu("gameDeuxAnimaux",0);
-            jeuBdd.insertJeu(jeu);
-        }
-        if(gameDeuxChiffresFromBdd==null){
-            Jeu jeu = new Jeu("gameDeuxChiffres",0);
-            jeuBdd.insertJeu(jeu);
-        }
-        jeuBdd.close();
-    }
 }

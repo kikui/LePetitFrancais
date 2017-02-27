@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class JeuBDD {
 
-    private static final int VERSION_BDD = 3;
+    private static final int VERSION_BDD = 5;
     private static final String NOM_BDD = "maBDD.db";
 
     private static final String TABLE_JEUX = "table_jeux";
@@ -99,11 +99,13 @@ public class JeuBDD {
     public int getScoresWithCategory(String category){
         int result=0;
         int count=0;
+        int score=0;
         Cursor c = bdd.query(TABLE_JEUX, new String[] {COL_ID, COL_JEUX, COL_SCORES}, COL_JEUX + " LIKE \"%" + category +"%\"", null, null, null, null);
         if (c != null) {
             c.moveToFirst();
             for (int i = 0; i < c.getCount(); i++) {
-                result =+ c.getInt(NUM_COL_SCORES);
+                score = c.getInt(NUM_COL_SCORES);
+                result += score;
                 count++;
                 c.moveToNext();
             }

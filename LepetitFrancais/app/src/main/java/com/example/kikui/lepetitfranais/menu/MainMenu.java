@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.kikui.lepetitfranais.R;
+import com.example.kikui.lepetitfranais.module.Jeu;
+import com.example.kikui.lepetitfranais.module.JeuBDD;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -19,6 +21,8 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        verify();
 
         button_game = (Button) findViewById(R.id.button_game);
         button_game.setOnClickListener(new View.OnClickListener() {
@@ -61,4 +65,42 @@ public class MainMenu extends AppCompatActivity {
         });
 
     }
+
+    public void verify(){
+        JeuBDD jeuBdd = new JeuBDD(this);
+        jeuBdd.open();
+        Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
+        Jeu gameDeuxAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxAnimaux");
+        Jeu memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
+        Jeu gameDeuxChiffresFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxChiffres");
+        Jeu animauxFromBdd = jeuBdd.getJeuWithNameJeu("Animaux");
+        Jeu chiffresFromBdd = jeuBdd.getJeuWithNameJeu("Chiffres");
+
+        if(animauxFromBdd==null){
+            Jeu jeu = new Jeu("Animaux",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(chiffresFromBdd==null){
+            Jeu jeu = new Jeu("Chiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(memoryAnimauxFromBdd==null){
+            Jeu jeu = new Jeu("memoryAnimaux",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(memoryChiffresFromBdd==null){
+            Jeu jeu = new Jeu("memoryChiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(gameDeuxAnimauxFromBdd==null){
+            Jeu jeu = new Jeu("gameDeuxAnimaux",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(gameDeuxChiffresFromBdd==null){
+            Jeu jeu = new Jeu("gameDeuxChiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        jeuBdd.close();
+    }
+
 }
