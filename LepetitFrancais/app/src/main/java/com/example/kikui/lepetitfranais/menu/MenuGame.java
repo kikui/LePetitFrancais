@@ -16,18 +16,25 @@ import com.example.kikui.lepetitfranais.module.JeuBDD;
 public class MenuGame extends AppCompatActivity {
 
     private LinearLayout layoutPlayMemory;
-    private ProgressBar bar;
+    private LinearLayout layoutPlayGame2;
+    private ProgressBar pregressBarMemory;
+    private ProgressBar pregressBarGame2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_game);
 
-        bar = (ProgressBar) findViewById(R.id.progressBar);
+        pregressBarMemory = (ProgressBar) findViewById(R.id.progressBar);
         TextView memoryPCT = (TextView)findViewById(R.id.memoryPCT);
+        pregressBarGame2 = (ProgressBar) findViewById(R.id.progressBar2);
+        TextView game2PCT = (TextView) findViewById(R.id.game2PCT);
 
-        bar.incrementProgressBy(PCTGlobalmemory());
-        memoryPCT.setText(String.valueOf(bar.getProgress()+"% "));
+        pregressBarMemory.setProgress(PCTGlobal("memory"));
+        memoryPCT.setText(String.valueOf(pregressBarMemory.getProgress()+"% "));
+
+        pregressBarGame2.setProgress(PCTGlobal("gameDeux"));
+        game2PCT.setText(String.valueOf(pregressBarMemory.getProgress()+"% "));
 
         layoutPlayMemory = (LinearLayout) findViewById(R.id.playMenuMemory);
         layoutPlayMemory.setOnClickListener(new View.OnClickListener() {
@@ -38,28 +45,22 @@ public class MenuGame extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        layoutPlayGame2 = (LinearLayout) findViewById(R.id.playMenuGame2);
+        layoutPlayGame2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Comming soon !" , Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
-    public int PCTGlobalmemory(){
-        //---------------------------BDD---------------------------
+    public int PCTGlobal(String category){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
-        Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
-        Jeu memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
-        if(memoryAnimauxFromBdd==null){
-            Jeu memoryAnimaux = new Jeu("memoryAnimaux",0);
-            jeuBdd.insertJeu(memoryAnimaux);
-            memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
-        }
-        if(memoryChiffresFromBdd==null){
-            Jeu memoryChiffres = new Jeu("memoryChiffres",0);
-            jeuBdd.insertJeu(memoryChiffres);
-            memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
-        }
-        int result = memoryAnimauxFromBdd.getScore()+memoryChiffresFromBdd.getScore();
-        result = (result*100)/4000;
+        int result = jeuBdd.getScoresWithCategory(category);
         jeuBdd.close();
-        //---------------------------BDD---------------------------
         return result;
     }
 }

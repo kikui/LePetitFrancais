@@ -75,6 +75,8 @@ public class MainMenu extends AppCompatActivity {
         Jeu gameDeuxChiffresFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxChiffres");
         Jeu animauxFromBdd = jeuBdd.getJeuWithNameJeu("Animaux");
         Jeu chiffresFromBdd = jeuBdd.getJeuWithNameJeu("Chiffres");
+        Jeu memoryFromBdd = jeuBdd.getJeuWithNameJeu("memory");
+        Jeu gameDeuxFromBdd = jeuBdd.getJeuWithNameJeu("gameDeux");
 
         if(animauxFromBdd==null){
             Jeu jeu = new Jeu("Animaux",0);
@@ -82,6 +84,14 @@ public class MainMenu extends AppCompatActivity {
         }
         if(chiffresFromBdd==null){
             Jeu jeu = new Jeu("Chiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(memoryFromBdd==null){
+            Jeu jeu = new Jeu("memory",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(gameDeuxFromBdd==null){
+            Jeu jeu = new Jeu("gameDeux",0);
             jeuBdd.insertJeu(jeu);
         }
         if(memoryAnimauxFromBdd==null){

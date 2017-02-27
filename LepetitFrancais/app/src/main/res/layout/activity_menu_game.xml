@@ -4,7 +4,8 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/activity_menu_game"
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.example.kikui.lepetitfranais.menu.MenuGame">
+tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
+    android:background="@drawable/montagnes">
 
 <TextView
     android:text="Game"
@@ -61,7 +62,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame">
                     android:layout_weight="0.31">
 
                     <ProgressBar
-                        style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/progressBar"
@@ -79,6 +80,62 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame">
                         android:id="@+id/memoryPCT"
                         android:layout_weight="1"
                         android:layout_gravity="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#FF909090"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:id="@+id/playMenuGame2"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:text="Game2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView170"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:textSize="30sp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="177dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.31">
+
+                    <ProgressBar
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar2"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:secondaryProgress="0"
+                        android:elevation="1dp" />
+
+                    <TextView
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/game2PCT"
+                        android:layout_weight="1"
+                        android:layout_gravity="center" />
+
                 </LinearLayout>
 
             </LinearLayout>
