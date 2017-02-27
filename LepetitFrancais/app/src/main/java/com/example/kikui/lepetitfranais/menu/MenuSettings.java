@@ -19,5 +19,29 @@ public class MenuSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_settings);
+
+        //-----------------------------TEST-BDD--------------------------------
+        JeuBDD jeuBdd = new JeuBDD(this);
+        jeuBdd.open();
+        Jeu jeuFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
+        
+        if(jeuFromBdd != null){
+            Toast.makeText(this, jeuFromBdd.toString(), Toast.LENGTH_LONG).show();
+        }
+        jeuFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxAnimaux");
+        if(jeuFromBdd != null){
+            Toast.makeText(this, jeuFromBdd.toString(), Toast.LENGTH_LONG).show();
+        }
+        jeuFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
+        if(jeuFromBdd != null){
+            Toast.makeText(this, jeuFromBdd.toString(), Toast.LENGTH_LONG).show();
+        }
+        jeuFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxChiffres");
+        if(jeuFromBdd != null){
+            Toast.makeText(this, jeuFromBdd.toString(), Toast.LENGTH_LONG).show();
+        }
+        jeuBdd.close();
+        //-----------------------------TEST-BDD--------------------------------
+
     }
 }

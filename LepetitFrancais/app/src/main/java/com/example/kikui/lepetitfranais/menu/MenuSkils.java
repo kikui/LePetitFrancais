@@ -17,47 +17,37 @@ public class MenuSkils extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_skils);
 
+        verify();
+
         ProgressBar progressBarAnimauxPCT = (ProgressBar) findViewById(R.id.progressBarAnimauxPCT);
         TextView textAnimauxPCT = (TextView)findViewById(R.id.textAnimauxPCT);
         CheckBox checkBoxAnimauxMemory = (CheckBox)findViewById(R.id.checkBoxAnimauxMemory);
-        CheckBox checkBoxAnimauxGame2 = (CheckBox)findViewById(R.id.checkBoxChiffresGame2);
+        CheckBox checkBoxAnimauxGame2 = (CheckBox)findViewById(R.id.checkBoxAnimauxGame2);
 
-        progressBarAnimauxPCT.incrementProgressBy(PCTGlobalAnimaux());
+        ProgressBar progressBarChiffresPCT = (ProgressBar) findViewById(R.id.progressBarChiffresPCT);
+        TextView textChiffresPCT = (TextView)findViewById(R.id.textChiffresPCT);
+        CheckBox checkBoxChiffresMemory = (CheckBox)findViewById(R.id.checkBoxChiffresMemory);
+        CheckBox checkBoxChiffresGame2 = (CheckBox)findViewById(R.id.checkBoxChiffresGame2);
+
+        progressBarAnimauxPCT.setProgress(PCTGlobal("Animaux"));
         textAnimauxPCT.setText(String.valueOf(progressBarAnimauxPCT.getProgress()+"% "));
 
         checked("memoryAnimaux",checkBoxAnimauxMemory);
+        checked("gameDeuxAnimaux",checkBoxAnimauxGame2);
+        checked("memoryChiffres",checkBoxChiffresMemory);
+        checked("gameDeuxChiffres",checkBoxChiffresGame2);
 
-        progressBarAnimauxPCT.incrementProgressBy(0);
-        textAnimauxPCT.setText(String.valueOf(progressBarAnimauxPCT.getProgress()+"% "));
+        progressBarChiffresPCT.setProgress(PCTGlobal("Chiffres"));
+        textChiffresPCT.setText(String.valueOf(progressBarChiffresPCT.getProgress()+"% "));
 
-    }
-
-    public int PCTGlobalAnimaux(){
-        JeuBDD jeuBdd = new JeuBDD(this);
-        jeuBdd.open();
-        Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
-        Jeu memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
-        if(memoryAnimauxFromBdd==null){
-            Jeu memoryAnimaux = new Jeu("memoryAnimaux",0);
-            jeuBdd.insertJeu(memoryAnimaux);
-            memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
-        }
-        if(memoryChiffresFromBdd==null){
-            Jeu memoryChiffres = new Jeu("memoryChiffres",0);
-            jeuBdd.insertJeu(memoryChiffres);
-            memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
-        }
-        int result = memoryAnimauxFromBdd.getScore()+memoryChiffresFromBdd.getScore();
-        result = (result*100)/4000;
-        jeuBdd.close();
-        return result;
     }
 
     public int PCTGlobal(String category){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
+        int result = jeuBdd.getScoresWithCategory(category);
         jeuBdd.close();
-        return 0;
+        return result;
     }
 
     public void checked(String nomJeu, CheckBox nomCheckBox){
@@ -70,4 +60,34 @@ public class MenuSkils extends AppCompatActivity {
         jeuBdd.close();
     }
 
+    public void verify(){
+        JeuBDD jeuBdd = new JeuBDD(this);
+        jeuBdd.open();
+        Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
+        Jeu gameDeuxAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxAnimaux");
+        Jeu memoryChiffresFromBdd = jeuBdd.getJeuWithNameJeu("memoryChiffres");
+        Jeu gameDeuxChiffresFromBdd = jeuBdd.getJeuWithNameJeu("gameDeuxChiffres");
+        Jeu animaux = new Jeu("Animaux",0);
+        Jeu chiffres = new Jeu("Chiffres",0);
+        jeuBdd.insertJeu(animaux);
+        jeuBdd.insertJeu(chiffres);
+
+        if(memoryAnimauxFromBdd==null){
+            Jeu jeu = new Jeu("memoryAnimaux",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(memoryChiffresFromBdd==null){
+            Jeu jeu = new Jeu("memoryChiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(gameDeuxAnimauxFromBdd==null){
+            Jeu jeu = new Jeu("gameDeuxAnimaux",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        if(gameDeuxChiffresFromBdd==null){
+            Jeu jeu = new Jeu("gameDeuxChiffres",0);
+            jeuBdd.insertJeu(jeu);
+        }
+        jeuBdd.close();
+    }
 }
