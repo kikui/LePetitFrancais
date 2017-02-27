@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class JeuBDD {
 
-    private static final int VERSION_BDD = 1;
+    private static final int VERSION_BDD = 2;
     private static final String NOM_BDD = "maBDD.db";
 
     private static final String TABLE_JEUX = "table_jeux";

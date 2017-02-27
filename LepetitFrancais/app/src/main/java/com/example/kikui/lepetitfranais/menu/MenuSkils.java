@@ -17,20 +17,22 @@ public class MenuSkils extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_skils);
 
-        ProgressBar progressBarMemoryPCT = (ProgressBar) findViewById(R.id.progressBarMemoryPCT);
-        TextView textMemoryPCT = (TextView)findViewById(R.id.textMemoryPCT);
-        CheckBox checkBoxAnimaux = (CheckBox)findViewById(R.id.checkBoxAnimaux);
-        CheckBox checkBoxChiffres = (CheckBox)findViewById(R.id.checkBoxChiffres);
+        ProgressBar progressBarAnimauxPCT = (ProgressBar) findViewById(R.id.progressBarAnimauxPCT);
+        TextView textAnimauxPCT = (TextView)findViewById(R.id.textAnimauxPCT);
+        CheckBox checkBoxAnimauxMemory = (CheckBox)findViewById(R.id.checkBoxAnimauxMemory);
+        CheckBox checkBoxAnimauxGame2 = (CheckBox)findViewById(R.id.checkBoxChiffresGame2);
 
-        progressBarMemoryPCT.incrementProgressBy(PCTGlobalmemory());
-        textMemoryPCT.setText(String.valueOf(progressBarMemoryPCT.getProgress()+"% "));
+        progressBarAnimauxPCT.incrementProgressBy(PCTGlobalAnimaux());
+        textAnimauxPCT.setText(String.valueOf(progressBarAnimauxPCT.getProgress()+"% "));
 
-        checked("memoryAnimaux",checkBoxAnimaux);
-        checked("memoryChiffres",checkBoxChiffres);
+        checked("memoryAnimaux",checkBoxAnimauxMemory);
+
+        progressBarAnimauxPCT.incrementProgressBy(0);
+        textAnimauxPCT.setText(String.valueOf(progressBarAnimauxPCT.getProgress()+"% "));
 
     }
 
-    public int PCTGlobalmemory(){
+    public int PCTGlobalAnimaux(){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
         Jeu memoryAnimauxFromBdd = jeuBdd.getJeuWithNameJeu("memoryAnimaux");
@@ -49,6 +51,13 @@ public class MenuSkils extends AppCompatActivity {
         result = (result*100)/4000;
         jeuBdd.close();
         return result;
+    }
+
+    public int PCTGlobal(String category){
+        JeuBDD jeuBdd = new JeuBDD(this);
+        jeuBdd.open();
+        jeuBdd.close();
+        return 0;
     }
 
     public void checked(String nomJeu, CheckBox nomCheckBox){

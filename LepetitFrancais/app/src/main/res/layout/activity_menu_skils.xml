@@ -35,7 +35,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 android:layout_marginRight="10dp" />
 
             <TextView
-                android:text="Mémory"
+                android:text="Animaux"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
@@ -46,7 +46,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/progressBarMemoryPCT"
+                android:id="@+id/progressBarAnimauxPCT"
                 android:layout_margin="10dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -56,7 +56,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textMemoryPCT"
+                android:id="@+id/textAnimauxPCT"
                 android:layout_margin="10dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -80,7 +80,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="Animaux"
+                    android:text="Memory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView9"
@@ -95,7 +95,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/checkBoxAnimaux"
+                    android:id="@+id/checkBoxAnimauxMemory"
                     android:layout_weight="1"
                     android:checked="false"
                     android:clickable="false" />
@@ -108,7 +108,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="Chiffres"
+                    android:text="Game 2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView90"
@@ -123,7 +123,7 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/checkBoxChiffres"
+                    android:id="@+id/checkBoxAnimauxGame2"
                     android:clickable="false"
                     android:layout_weight="1" />
 
@@ -135,6 +135,101 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuSkils">
                 android:background="#FF909090"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp" />
+
+            <TextView
+                android:text="Chiffres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:padding="20dp"
+                android:textSize="20sp" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarChiffresPCT"
+                android:layout_margin="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textChiffresPCT"
+                android:layout_margin="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Game list :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:id="@+id/textView20"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Memory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView45"
+                    android:textSize="15sp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="50dp"
+                    android:paddingLeft="100dp"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBoxChiffresMemory"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Game 2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView94"
+                    android:textSize="15sp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="50dp"
+                    android:paddingLeft="100dp"
+                    android:layout_weight="1.08" />
+
+                <CheckBox
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBoxChiffresGame2"
+                    android:clickable="false"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
