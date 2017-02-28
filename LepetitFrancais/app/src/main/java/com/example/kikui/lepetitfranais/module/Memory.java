@@ -34,7 +34,6 @@ public class Memory extends Activity {
 
     private static Object lock = new Object();
 
-    int turns;
     private TableLayout mainTable;
     private UpdateCardsHandler handler;
 
@@ -152,7 +151,7 @@ public class Memory extends Activity {
         public void onClick(View v) {
 
             synchronized (lock) {
-                if(firstCard!=null && seconedCard != null){
+                if(firstCard != null && seconedCard != null){
                     return;
                 }
                 int id = v.getId();
@@ -166,7 +165,7 @@ public class Memory extends Activity {
         private void turnCard(Button button,int x, int y) {
             button.setBackgroundDrawable(images.get(cards[x][y]));
 
-            if(firstCard==null){
+            if(firstCard == null){
                 firstCard = new Card(button,x,y);
             }
             else{
@@ -176,9 +175,6 @@ public class Memory extends Activity {
                 }
 
                 seconedCard = new Card(button,x,y);
-
-                turns++;
-
 
                 TimerTask tt = new TimerTask() {
 
@@ -196,7 +192,7 @@ public class Memory extends Activity {
                 };
 
                 Timer t = new Timer(false);
-                t.schedule(tt, 1300);
+                t.schedule(tt, 1000);
             }
 
 
