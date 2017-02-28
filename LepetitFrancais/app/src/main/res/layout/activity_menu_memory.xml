@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/paysage_nuit_v2">
+    android:background="@drawable/campagne_svg">
 
     <TextView
         android:text="Memory"
