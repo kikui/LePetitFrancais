@@ -18,6 +18,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".module.Memory"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".menu.MenuMemory"
             android:screenOrientation="portrait" />
         <activity
@@ -32,7 +35,6 @@
         <activity
             android:name=".menu.MenuSettings"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.Memory"></activity>
     </application>
 
 </manifest>

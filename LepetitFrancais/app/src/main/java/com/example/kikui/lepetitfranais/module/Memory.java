@@ -27,6 +27,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
+import com.example.kikui.lepetitfranais.R;
+
 public class Memory extends Activity {
     private static int ROW_COUNT = -1;
     private static int COL_COUNT = -1;
@@ -50,12 +52,9 @@ public class Memory extends Activity {
 
         handler = new UpdateCardsHandler();
         loadImages();
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_memory);
 
-        TextView url = ((TextView)findViewById(R.id.myWebSite));
-        Linkify.addLinks(url, Linkify.WEB_URLS);
-
-        backImage =  getResources().getDrawable(R.drawable.icon);
+        backImage =  getResources().getDrawable(R.drawable.memory_test_0);
 
         buttonListener = new ButtonListener();
 
@@ -72,9 +71,9 @@ public class Memory extends Activity {
 
     }
 
-    private void newGame(int c, int r) {
-        ROW_COUNT = r;
-        COL_COUNT = c;
+    private void newGame() {
+        ROW_COUNT = 5;
+        COL_COUNT = 4;
 
         cards = new int [COL_COUNT] [ROW_COUNT];
 
@@ -95,36 +94,21 @@ public class Memory extends Activity {
         firstCard=null;
         loadCards();
 
-        turns=0;
-        ((TextView)findViewById(R.id.tv1)).setText("Tries: "+turns);
-
-
     }
 
     private void loadImages() {
         images = new ArrayList<Drawable>();
 
-        images.add(getResources().getDrawable(R.drawable.));
-        images.add(getResources().getDrawable(R.drawable.card2));
-        images.add(getResources().getDrawable(R.drawable.card3));
-        images.add(getResources().getDrawable(R.drawable.card4));
-        images.add(getResources().getDrawable(R.drawable.card5));
-        images.add(getResources().getDrawable(R.drawable.card6));
-        images.add(getResources().getDrawable(R.drawable.card7));
-        images.add(getResources().getDrawable(R.drawable.card8));
-        images.add(getResources().getDrawable(R.drawable.card9));
-        images.add(getResources().getDrawable(R.drawable.card10));
-        images.add(getResources().getDrawable(R.drawable.card11));
-        images.add(getResources().getDrawable(R.drawable.card12));
-        images.add(getResources().getDrawable(R.drawable.card13));
-        images.add(getResources().getDrawable(R.drawable.card14));
-        images.add(getResources().getDrawable(R.drawable.card15));
-        images.add(getResources().getDrawable(R.drawable.card16));
-        images.add(getResources().getDrawable(R.drawable.card17));
-        images.add(getResources().getDrawable(R.drawable.card18));
-        images.add(getResources().getDrawable(R.drawable.card19));
-        images.add(getResources().getDrawable(R.drawable.card20));
-        images.add(getResources().getDrawable(R.drawable.card21));
+        images.add(getResources().getDrawable(R.drawable.memory_test_1));
+        images.add(getResources().getDrawable(R.drawable.memory_test_2));
+        images.add(getResources().getDrawable(R.drawable.memory_test_3));
+        images.add(getResources().getDrawable(R.drawable.memory_test_4));
+        images.add(getResources().getDrawable(R.drawable.memory_test_5));
+        images.add(getResources().getDrawable(R.drawable.memory_test_6));
+        images.add(getResources().getDrawable(R.drawable.memory_test_7));
+        images.add(getResources().getDrawable(R.drawable.memory_test_8));
+        images.add(getResources().getDrawable(R.drawable.memory_test_9));
+        images.add(getResources().getDrawable(R.drawable.memory_test_10));
 
     }
 
