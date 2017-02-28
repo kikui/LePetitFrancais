@@ -27,6 +27,9 @@ public class Memory extends Activity {
     private Context context;
     private Drawable backImage;
     private int [] [] cards;
+    private int [] [] BoardCount;
+    private int COUNT=0;
+    private int id = 0;
     private List<Drawable> images;
     private Card firstCard;
     private Card seconedCard;
@@ -62,6 +65,7 @@ public class Memory extends Activity {
         COL_COUNT = 4;
 
         cards = new int [COL_COUNT] [ROW_COUNT];
+        BoardCount = new int [][];
 
         TableRow tr = ((TableRow)findViewById(R.id.TableRow03));
         tr.removeAllViews();
@@ -157,6 +161,7 @@ public class Memory extends Activity {
                 int id = v.getId();
                 int x = id/100;
                 int y = id%100;
+                BoardCount[id][COUNT]=id,COUNT;
                 turnCard((Button)v,x,y);
             }
 
