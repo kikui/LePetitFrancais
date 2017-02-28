@@ -12,7 +12,7 @@ import com.example.kikui.lepetitfranais.module.Memory;
 
 public class MenuMemory extends AppCompatActivity {
 
-    private Button buttonMemory;
+    private Button buttonMemoryAnimaux;
     private int valueAnimaux=20;
 
     @Override
@@ -20,16 +20,17 @@ public class MenuMemory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_memory);
 
-        buttonMemory = (Button) findViewById(R.id.button_memory_animaux);
+        buttonMemoryAnimaux = (Button) findViewById(R.id.button_memory_animaux);
         TextView animauxPCT = (TextView)findViewById(R.id.animauxPCT);
 
         animauxPCT.setText(String.valueOf(valueAnimaux+"%"));
 
-        buttonMemory.setOnClickListener(new View.OnClickListener() {
+        buttonMemoryAnimaux.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuMemory.this, Memory.class);
+                intent.putExtra("nameGame","memoryAnimaux");
                 startActivity(intent);
             }
         });

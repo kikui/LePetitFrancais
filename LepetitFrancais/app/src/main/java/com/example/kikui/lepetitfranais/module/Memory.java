@@ -7,6 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,10 +19,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kikui.lepetitfranais.R;
-
-import static com.example.kikui.lepetitfranais.R.id.textView;
 
 public class Memory extends Activity {
     private static int ROW_COUNT = -1;
@@ -46,6 +47,9 @@ public class Memory extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+        String nameGame = intent.getStringExtra("nameGame");
+
         handler = new UpdateCardsHandler();
         loadImages();
         setContentView(R.layout.activity_memory);
@@ -58,11 +62,11 @@ public class Memory extends Activity {
 
         context  = mainTable.getContext();
 
-        newGame();
+        newGame(nameGame);
 
     }
 
-    private void newGame() {
+    private void newGame(String jeu) {
         ROW_COUNT = 5;
         COL_COUNT = 4;
 
@@ -84,8 +88,9 @@ public class Memory extends Activity {
         verif();
         if (verif()==true){
             int score = getScore();
-            textView.setText("Your score : "+String.valueOf(score);
-            upDateScore(score);
+            TextView textView = (TextView)findViewById(R.id.tVScore);
+            textView.setText("Your score : "+String.valueOf(score));
+            upDateScore(score,jeu);
         }
 
     }
@@ -238,23 +243,24 @@ public class Memory extends Activity {
 
     private int getScore(){
         int result=0;
-        for (int i=0,i<405,i++){
-            if(getCount<=2){
+        int n = 0;
+        /*for(n,n<405,n++) {
+            if(getCount()<=2){
                 result+=100;
             }
-            if(getCount==3){
+            if(getCount()==3){
                 result+=80;
             }
-            if(getCount==4){
+            if(getCount()==4){
                 result+=60;
             }
-            if(getCount==5){
+            if(getCount()==5){
                 result+=40;
             }
-            if(getCount>5){
+            if(getCount()>5){
                 result+=20;
             }
-        }
+        }*/
         return result;
     }
 
@@ -263,9 +269,9 @@ public class Memory extends Activity {
         int countCardReturn=0;
         for (int y = 0; y < ROW_COUNT; y++) {
             for (int x = 0; x < COL_COUNT; x++) {
-                Card verif = new Card(x,y); // ici souci car il faut une imageBouton. et c est sur ce bouton qu on va agir en faite
+                /*Card verif = new Card(x,y); // ici souci car il faut une imageBouton. et c est sur ce bouton qu on va agir en faite
                 if (verif.button.getVisibility()==View.INVISIBLE)
-                    countCardReturn++;
+                    countCardReturn++;*/
             }
         }
         if (countCardReturn==20){
@@ -276,12 +282,22 @@ public class Memory extends Activity {
     private int getCount()
     {
         int temp = 0;
-        for (count [id] []< 405; id++){
+        /*for (count [id] []< 405; id++){
             temp = temp + count [] [count_turn];
-        }
+        }*/
         count_turn = temp;
         return count_turn;
     }
 
+    private void upDateScore(int score, String jeu){
+        JeuBDD jeuBdd = new JeuBDD(this);
+        jeuBdd.open();
+        Jeu jeuFromBdd = jeuBdd.getJeuWithNameJeu(jeu);
+        if (jeuFromBdd.getScore()<score){
+            jeuFromBdd.setScore(score);
+            jeuBdd.updateJeu(jeuFromBdd.getId(), jeuFromBdd);
+        }
+        jeuBdd.close();
+    }
 
 }
