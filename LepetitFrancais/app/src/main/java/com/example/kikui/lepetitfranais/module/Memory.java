@@ -49,6 +49,10 @@ public class Memory extends Activity {
         Intent intent = getIntent();
         String nameGame = intent.getStringExtra("nameGame");
 
+        //-----------------------------TEST-SCORE-BDD-------------------------------------
+        upDateScore(2000,nameGame);
+        //-----------------------------TEST-SCORE-BDD-------------------------------------
+
         handler = new UpdateCardsHandler();
         loadImages();
         setContentView(R.layout.activity_memory);

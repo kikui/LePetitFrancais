@@ -48,8 +48,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:padding="10dp">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -78,19 +81,43 @@
                     android:layout_centerInParent="false"
                     android:layout_toRightOf="@+id/textView2" />
 
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/card_background_version2"
                     android:id="@+id/imageView24"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_toLeftOf="@+id/textView3" />
+
+                <TextView
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:layout_centerInParent="true" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/card_background_version2"
                     android:id="@+id/imageView25"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_centerHorizontal="false"
+                    android:layout_centerInParent="false"
+                    android:layout_toRightOf="@+id/textView3" />
 
             </RelativeLayout>
 
