@@ -60,14 +60,9 @@ public class Memory extends Activity {
 
         mainTable = (TableLayout)findViewById(R.id.TableLayout03);
 
-
         context  = mainTable.getContext();
 
-        Spinner s = (Spinner) findViewById(R.id.Spinner01);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(
-                this, R.array.type, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setAdapter(adapter);
+        newGame();
 
     }
 
@@ -76,10 +71,6 @@ public class Memory extends Activity {
         COL_COUNT = 4;
 
         cards = new int [COL_COUNT] [ROW_COUNT];
-
-
-        mainTable.removeView(findViewById(R.id.TableRow01));
-        mainTable.removeView(findViewById(R.id.TableRow02));
 
         TableRow tr = ((TableRow)findViewById(R.id.TableRow03));
         tr.removeAllViews();
@@ -114,9 +105,7 @@ public class Memory extends Activity {
 
     private void loadCards(){
         try{
-            int size = ROW_COUNT*COL_COUNT;
-
-            Log.i("loadCards()","size=" + size);
+            int size = 20;
 
             ArrayList<Integer> list = new ArrayList<Integer>();
 
@@ -197,7 +186,6 @@ public class Memory extends Activity {
                 seconedCard = new Card(button,x,y);
 
                 turns++;
-                ((TextView)findViewById(R.id.tv1)).setText("Tries: "+turns);
 
 
                 TimerTask tt = new TimerTask() {

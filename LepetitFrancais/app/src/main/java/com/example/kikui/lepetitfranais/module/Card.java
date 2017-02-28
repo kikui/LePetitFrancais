@@ -11,8 +11,8 @@ public class Card{
 
     public Card(Button button, int x,int y) {
         this.x = x;
-        this.y=y;
-        this.button=button;
+        this.y = y;
+        this.button = button;
     }
 
 
