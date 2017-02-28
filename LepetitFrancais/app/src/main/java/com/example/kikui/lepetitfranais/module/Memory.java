@@ -20,7 +20,6 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kikui.lepetitfranais.R;
 
@@ -244,7 +243,7 @@ public class Memory extends Activity {
     private int getScore(){
         int result=0;
         int n = 0;
-        /*for(n,n<405,n++) {
+        /*for(n,n<405,n++){
             if(getCount()<=2){
                 result+=100;
             }
