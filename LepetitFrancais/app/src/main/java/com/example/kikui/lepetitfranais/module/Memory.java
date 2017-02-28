@@ -21,19 +21,21 @@ import android.widget.TableRow;
 
 import com.example.kikui.lepetitfranais.R;
 
+import static com.example.kikui.lepetitfranais.R.id.textView;
+
 public class Memory extends Activity {
     private static int ROW_COUNT = -1;
     private static int COL_COUNT = -1;
     private Context context;
     private Drawable backImage;
     private int [] [] cards;
-    private int [] [] BoardCount;
-    private int COUNT=0;
+    private int [] [] count;
     private int id = 0;
     private List<Drawable> images;
     private Card firstCard;
     private Card seconedCard;
     private ButtonListener buttonListener;
+    private int count_turn;
 
     private static Object lock = new Object();
 
@@ -65,7 +67,6 @@ public class Memory extends Activity {
         COL_COUNT = 4;
 
         cards = new int [COL_COUNT] [ROW_COUNT];
-        BoardCount = new int [][];
 
         TableRow tr = ((TableRow)findViewById(R.id.TableRow03));
         tr.removeAllViews();
@@ -79,6 +80,13 @@ public class Memory extends Activity {
 
         firstCard=null;
         loadCards();
+
+        verif();
+        if (verif()==true){
+            int score = getScore();
+            textView.setText("Your score : "+String.valueOf(score);
+            upDateScore(score);
+        }
 
     }
 
@@ -161,7 +169,7 @@ public class Memory extends Activity {
                 int id = v.getId();
                 int x = id/100;
                 int y = id%100;
-                BoardCount[id][COUNT]=id,COUNT;
+                count = new int [id][count_turn];
                 turnCard((Button)v,x,y);
             }
 
@@ -228,7 +236,52 @@ public class Memory extends Activity {
         }
     }
 
+    private int getScore(){
+        int result=0;
+        for (int i=0,i<405,i++){
+            if(getCount<=2){
+                result+=100;
+            }
+            if(getCount==3){
+                result+=80;
+            }
+            if(getCount==4){
+                result+=60;
+            }
+            if(getCount==5){
+                result+=40;
+            }
+            if(getCount>5){
+                result+=20;
+            }
+        }
+        return result;
+    }
 
+    private boolean verif(){
+        boolean result=false;
+        int countCardReturn=0;
+        for (int y = 0; y < ROW_COUNT; y++) {
+            for (int x = 0; x < COL_COUNT; x++) {
+                Card verif = new Card(x,y); // ici souci car il faut une imageBouton. et c est sur ce bouton qu on va agir en faite
+                if (verif.button.getVisibility()==View.INVISIBLE)
+                    countCardReturn++;
+            }
+        }
+        if (countCardReturn==20){
+            result=true;
+        }
+        return result;
+    }
+    private int getCount()
+    {
+        int temp = 0;
+        for (count [id] []< 405; id++){
+            temp = temp + count [] [count_turn];
+        }
+        count_turn = temp;
+        return count_turn;
+    }
 
 
 }
