@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 /**
  * Created by kikui on 25/02/2017.
@@ -67,6 +68,17 @@ public class JeuBDD {
     public int removeJeuWithID(int id){
         //Suppression d'un jeu de la BDD grâce à l'ID
         return bdd.delete(TABLE_JEUX, COL_ID + " = " +id, null);
+    }
+
+    public void resetAllJeu(){
+        Jeu jeuMemoryAnimaux = getJeuWithNameJeu("memoryAnimaux");
+        removeJeuWithID(jeuMemoryAnimaux.getId());
+        Jeu jeuGameDeuxAnimaux = getJeuWithNameJeu("gameDeuxAnimaux");
+        removeJeuWithID(jeuGameDeuxAnimaux.getId());
+        Jeu jeuMemoryChiffres = getJeuWithNameJeu("memoryChiffres");
+        removeJeuWithID(jeuMemoryChiffres.getId());
+        Jeu jeuGameDeuxChiffres = getJeuWithNameJeu("gameDeuxChiffres");
+        removeJeuWithID(jeuGameDeuxChiffres.getId());
     }
 
     public Jeu getJeuWithNameJeu(String jeu){

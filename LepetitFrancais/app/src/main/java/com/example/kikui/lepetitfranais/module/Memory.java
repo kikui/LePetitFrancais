@@ -50,7 +50,7 @@ public class Memory extends Activity {
         String nameGame = intent.getStringExtra("nameGame");
 
         //-----------------------------TEST-SCORE-BDD-------------------------------------
-        upDateScore(2000,nameGame);
+        upDateScore(1000,nameGame);
         //-----------------------------TEST-SCORE-BDD-------------------------------------
 
         handler = new UpdateCardsHandler();
@@ -88,7 +88,6 @@ public class Memory extends Activity {
         firstCard=null;
         loadCards();
 
-        verif();
         if (verif()==true){
             int score = getScore();
             TextView textView = (TextView)findViewById(R.id.tVScore);

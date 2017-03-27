@@ -81,10 +81,10 @@
                 android:gravity="center" />
 
             <TextView
-                android:text="50%"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView12"
+                android:id="@+id/chiffresPCT"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center" />
@@ -113,10 +113,10 @@
                 android:gravity="center" />
 
             <TextView
-                android:text="36%"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView14"
+                android:id="@+id/maisonPCT"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center" />
@@ -145,10 +145,10 @@
                 android:gravity="center" />
 
             <TextView
-                android:text="70%"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView16"
+                android:id="@+id/foretPCT"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center" />
@@ -177,10 +177,10 @@
                 android:gravity="center" />
 
             <TextView
-                android:text="2%"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView16"
+                android:id="@+id/villePCT"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center" />

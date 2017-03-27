@@ -22,13 +22,12 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        verify();
-
         button_game = (Button) findViewById(R.id.button_game);
         button_game.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                verify();
                 Intent intent = new Intent(MainMenu.this, MenuGame.class);
                 startActivity(intent);
             }
@@ -39,6 +38,7 @@ public class MainMenu extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                verify();
                 Intent intent = new Intent(MainMenu.this, MenuSuccess.class);
                 startActivity(intent);
             }
@@ -49,6 +49,7 @@ public class MainMenu extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                verify();
                 Intent intent = new Intent(MainMenu.this, MenuSkils.class);
                 startActivity(intent);
             }
@@ -59,6 +60,7 @@ public class MainMenu extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                verify();
                 Intent intent = new Intent(MainMenu.this, MenuSettings.class);
                 startActivity(intent);
             }
