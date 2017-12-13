@@ -13,19 +13,19 @@
     android:background="@drawable/paysage_nuit_v2">
 
     <TextView
-        android:text="Settings"
+        android:text="@string/Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:padding="10dp"
         android:textAllCaps="false"
         android:textSize="25sp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <Button
-        android:text="Reset"
+        android:text="@string/Reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonReset"

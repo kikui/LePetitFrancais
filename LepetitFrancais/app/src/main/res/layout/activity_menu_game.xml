@@ -8,14 +8,14 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
     android:background="@drawable/montagnes">
 
 <TextView
-    android:text="Game"
+    android:text="@string/Games"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/textView"
     android:padding="10dp"
     android:textAllCaps="false"
     android:textSize="25sp"
-    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp"
     android:layout_marginTop="20dp"
     android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -41,12 +41,13 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="true"
+                android:focusable="true"
                 android:id="@+id/playMenuMemory"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:text="Memory"
+                    android:text="@string/Memory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView17"
@@ -66,7 +67,6 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/progressBar"
-                        android:layout_weight="1"
                         android:layout_margin="10dp"
                         android:padding="10dp"
                         android:layout_gravity="center"
@@ -78,7 +78,6 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/memoryPCT"
-                        android:layout_weight="1"
                         android:layout_gravity="center" />
                 </LinearLayout>
 
@@ -96,12 +95,13 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="true"
+                android:focusable="true"
                 android:id="@+id/playMenuGame2"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:text="Game2"
+                    android:text="@string/Game2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView170"
@@ -121,7 +121,6 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/progressBar2"
-                        android:layout_weight="1"
                         android:layout_margin="10dp"
                         android:padding="10dp"
                         android:layout_gravity="center"
@@ -133,7 +132,6 @@ tools:context="com.example.kikui.lepetitfranais.menu.MenuGame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/game2PCT"
-                        android:layout_weight="1"
                         android:layout_gravity="center" />
 
                 </LinearLayout>

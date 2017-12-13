@@ -56,17 +56,12 @@ public class Memory extends Activity {
         handler = new UpdateCardsHandler();
         loadImages();
         setContentView(R.layout.activity_memory);
-
         backImage =  getResources().getDrawable(R.drawable.memory_test_0);
-
         buttonListener = new ButtonListener();
-
         mainTable = (TableLayout)findViewById(R.id.TableLayout03);
-
         context  = mainTable.getContext();
 
         newGame(nameGame);
-
     }
 
     private void newGame(String jeu) {
@@ -88,7 +83,7 @@ public class Memory extends Activity {
         firstCard=null;
         loadCards();
 
-        if (verif()==true){
+        if (verif()){
             int score = getScore();
             TextView textView = (TextView)findViewById(R.id.tVScore);
             textView.setText("Your score : "+String.valueOf(score));
@@ -117,7 +112,7 @@ public class Memory extends Activity {
         try{
             int size = 20;
 
-            ArrayList<Integer> list = new ArrayList<Integer>();
+            ArrayList<Integer> list = new ArrayList<>();
 
             for(int i=0;i<size;i++){
                 list.add(new Integer(i));
@@ -191,7 +186,7 @@ public class Memory extends Activity {
             else{
 
                 if(firstCard.x == x && firstCard.y == y){
-                    return; //the user pressed the same card
+                    return;
                 }
 
                 seconedCard = new Card(button,x,y);
@@ -245,8 +240,8 @@ public class Memory extends Activity {
 
     private int getScore(){
         int result=0;
-        int n = 0;
-        /*for(n,n<405,n++){
+        for(int n=0 ;n<405; n++)
+        {
             if(getCount()<=2){
                 result+=100;
             }
@@ -262,7 +257,7 @@ public class Memory extends Activity {
             if(getCount()>5){
                 result+=20;
             }
-        }*/
+        }
         return result;
     }
 

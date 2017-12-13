@@ -40,7 +40,7 @@ public class MenuSkils extends AppCompatActivity {
 
     }
 
-    public int PCTGlobal(String category){
+    private int PCTGlobal(String category){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
         int result = jeuBdd.getScoresWithCategory(category);
@@ -48,7 +48,7 @@ public class MenuSkils extends AppCompatActivity {
         return result;
     }
 
-    public void checked(String nomJeu, CheckBox nomCheckBox){
+    private void checked(String nomJeu, CheckBox nomCheckBox){
         JeuBDD jeuBdd = new JeuBDD(this);
         jeuBdd.open();
         Jeu jeuFromBdd = jeuBdd.getJeuWithNameJeu(nomJeu);

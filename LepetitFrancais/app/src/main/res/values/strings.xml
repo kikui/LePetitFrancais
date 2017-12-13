@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Le petit Français</string>
+    <string name="Games">Games</string>
+    <string name="Success">Success</string>
+    <string name="Skills">Skills</string>
+    <string name="Settings">Settings</string>
+    <string name="Memory">Memory</string>
+    <string name="Game2">Game2</string>
+    <string name="Description_Memory">In this memory we must return a first card that will contain the object and the second card will be a card with the name of the object\n\nThe objective is to find all the pairs with the least possible blow</string>
+    <string name="Animaux">Animaux</string>
+    <string name="Memory_Chiffres">Chiffres</string>
+    <string name="Memory_Maison">Maison</string>
+    <string name="Memory_Foret">Foret</string>
+    <string name="Memory_Ville">Ville</string>
+    <string name="Memory_Play">Play</string>
+    <string name="Reset">Reset</string>
 </resources>

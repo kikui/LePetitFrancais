@@ -46,28 +46,28 @@ public class JeuBDD {
         return bdd;
     }
 
-    public long insertJeu(Jeu jeu){
-        //Création d'un ContentValues (fonctionne comme une HashMap)
+    public void insertJeu(Jeu jeu){
+        //Création d'un ContentValues
         ContentValues values = new ContentValues();
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne dans laquelle on veut mettre la valeur)
         values.put(COL_JEUX, jeu.getJeu());
         values.put(COL_SCORES, jeu.getScore());
         //on insère l'objet dans la BDD via le ContentValues
-        return bdd.insert(TABLE_JEUX, null, values);
+        bdd.insert(TABLE_JEUX, null, values);
     }
 
-    public int updateJeu(int id, Jeu jeu){
+    public void updateJeu(int id, Jeu jeu){
         //La mise à jour d'un jeu dans la BDD fonctionne plus ou moins comme une insertion
-        //il faut simple préciser quelle jeu on doit mettre à jour grâce à l'ID
+        //il faut simplement préciser quelle jeu on doit mettre à jour grâce à l'ID
         ContentValues values = new ContentValues();
         values.put(COL_JEUX, jeu.getJeu());
         values.put(COL_SCORES, jeu.getScore());
-        return bdd.update(TABLE_JEUX, values, COL_ID + " = " +id, null);
+        bdd.update(TABLE_JEUX, values, COL_ID + " = " +id, null);
     }
 
-    public int removeJeuWithID(int id){
+    public void removeJeuWithID(int id){
         //Suppression d'un jeu de la BDD grâce à l'ID
-        return bdd.delete(TABLE_JEUX, COL_ID + " = " +id, null);
+        bdd.delete(TABLE_JEUX, COL_ID + " = " +id, null);
     }
 
     public void resetAllJeu(){
@@ -82,29 +82,22 @@ public class JeuBDD {
     }
 
     public Jeu getJeuWithNameJeu(String jeu){
-        //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
+        //Récupère dans un Cursor les valeur correspondant à un jeu contenu dans la BDD (ici on sélectionne le jeu grâce à son nom)
         Cursor c = bdd.query(TABLE_JEUX, new String[] {COL_ID, COL_JEUX, COL_SCORES}, COL_JEUX + " LIKE \"" + jeu +"\"", null, null, null, null);
         return cursorToJeu(c);
     }
 
-    //Cette méthode permet de convertir un cursor en un Jeu
     private Jeu cursorToJeu(Cursor c){
-        //si aucun élément n'a été retourné dans la requête, on renvoie null
         if (c.getCount() == 0)
             return null;
-
-        //Sinon on se place sur le premier élément
         c.moveToFirst();
-        //On créé un jeu
         Jeu jeu = new Jeu();
-        //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
+
         jeu.setId(c.getInt(NUM_COL_ID));
         jeu.setJeu(c.getString(NUM_COL_JEUX));
         jeu.setScore(c.getInt(NUM_COL_SCORES));
-        //On ferme le cursor
-        c.close();
 
-        //On retourne le jeu
+        c.close();
         return jeu;
     }
 

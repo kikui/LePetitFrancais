@@ -7,19 +7,19 @@
     android:background="@drawable/campagne_svg">
 
     <TextView
-        android:text="Memory"
+        android:text="@string/Memory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
         android:padding="10dp"
         android:textAllCaps="false"
         android:textSize="25sp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat"/>
 
     <TextView
-        android:text="In this memory we must return a first card that will contain the object and the second card will be a card with the name of the object\n\nThe objective is to find all the pairs with the least possible blow"
+        android:text="@string/Description_Memory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Explanation"
@@ -39,12 +39,12 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Animaux"
+                android:text="@string/Animaux"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/theme_memory_animaux"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:gravity="center" />
 
             <TextView
@@ -57,12 +57,12 @@
                 android:gravity="center" />
 
             <Button
-                android:text="Play"
+                android:text="@string/Memory_Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/button_memory_animaux"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:gravity="center" />
 
         </TableRow>
@@ -72,12 +72,12 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Chiffres"
+                android:text="@string/Memory_Chiffres"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/theme_memory_chiffres"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:gravity="center" />
 
             <TextView
@@ -90,12 +90,12 @@
                 android:gravity="center" />
 
             <Button
-                android:text="Play"
+                android:text="@string/Memory_Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/button_memory_chiffres"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:gravity="center" />
         </TableRow>
 
@@ -104,12 +104,12 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Maison"
+                android:text="@string/Memory_Maison"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/theme_memory_maison"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:gravity="center" />
 
             <TextView
@@ -122,12 +122,12 @@
                 android:gravity="center" />
 
             <Button
-                android:text="Play"
+                android:text="@string/Memory_Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/button_memory_maison"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:gravity="center" />
         </TableRow>
 
@@ -136,12 +136,12 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:text="Forêt"
+                android:text="@string/Memory_Foret"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/theme_memory_foret"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:gravity="center" />
 
             <TextView
@@ -154,12 +154,12 @@
                 android:gravity="center" />
 
             <Button
-                android:text="Play"
+                android:text="@string/Memory_Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/button_memory_foret"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:gravity="center" />
         </TableRow>
 
@@ -168,12 +168,12 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:text="Ville"
+                android:text="@string/Memory_Ville"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/theme_memory_ville"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:gravity="center" />
 
             <TextView
@@ -186,12 +186,12 @@
                 android:gravity="center" />
 
             <Button
-                android:text="Play"
+                android:text="@string/Memory_Play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/button_memory_ville"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:gravity="center" />
         </TableRow>
     </TableLayout>

@@ -12,17 +12,12 @@ import com.example.kikui.lepetitfranais.module.JeuBDD;
 
 public class MainMenu extends AppCompatActivity {
 
-    private Button button_game;
-    private Button button_success;
-    private Button button_skils;
-    private Button button_settings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        button_game = (Button) findViewById(R.id.button_game);
+        Button button_game = (Button) findViewById(R.id.button_game);
         button_game.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -33,7 +28,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        button_success = (Button) findViewById(R.id.button_success);
+        Button button_success = (Button) findViewById(R.id.button_success);
         button_success.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -44,7 +39,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        button_skils = (Button) findViewById(R.id.button_skils);
+        Button button_skils = (Button) findViewById(R.id.button_skils);
         button_skils.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -55,7 +50,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        button_settings = (Button) findViewById(R.id.button_settings);
+        Button button_settings = (Button) findViewById(R.id.button_settings);
         button_settings.setOnClickListener(new View.OnClickListener() {
 
             @Override

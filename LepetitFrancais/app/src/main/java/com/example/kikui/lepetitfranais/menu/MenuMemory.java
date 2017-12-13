@@ -16,26 +16,20 @@ import com.example.kikui.lepetitfranais.module.Memory;
 
 public class MenuMemory extends AppCompatActivity {
 
-    private Button buttonMemoryAnimaux;
-    private Button buttonMemoryChiffres;
-    private Button buttonMemoryMaison;
-    private Button buttonMemoryForet;
-    private Button buttonMemoryVille;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_memory);
 
-        buttonMemoryAnimaux = (Button) findViewById(R.id.button_memory_animaux);
+        Button buttonMemoryAnimaux = (Button) findViewById(R.id.button_memory_animaux);
         TextView animauxPCT = (TextView)findViewById(R.id.animauxPCT);
-        buttonMemoryChiffres = (Button) findViewById(R.id.button_memory_chiffres);
+        Button buttonMemoryChiffres = (Button) findViewById(R.id.button_memory_chiffres);
         TextView chiffresPCT = (TextView)findViewById(R.id.chiffresPCT);
-        buttonMemoryMaison = (Button) findViewById(R.id.button_memory_maison);
+        Button buttonMemoryMaison = (Button) findViewById(R.id.button_memory_maison);
         TextView maisonPCT = (TextView)findViewById(R.id.maisonPCT);
-        buttonMemoryForet = (Button) findViewById(R.id.button_memory_foret);
+        Button buttonMemoryForet = (Button) findViewById(R.id.button_memory_foret);
         TextView foretPCT = (TextView)findViewById(R.id.foretPCT);
-        buttonMemoryVille = (Button) findViewById(R.id.button_memory_ville);
+        Button buttonMemoryVille = (Button) findViewById(R.id.button_memory_ville);
         TextView villePCT = (TextView)findViewById(R.id.villePCT);
 
         animauxPCT.setText(String.valueOf(getScoreJeu("memoryAnimaux")+"%"));
